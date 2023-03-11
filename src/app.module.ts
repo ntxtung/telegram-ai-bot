@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
-  imports: [TelegramModule],
+  imports: [TelegramModule.register()],
   controllers: [AppController],
   providers: [AppService],
 })

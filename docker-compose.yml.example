@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  bot-backend:
+    image: node:18
+    container_name: bot-backend
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_TOKEN=
+      - OPEN_AI_TOKEN=
+    ports:
+      - "8001:80"
+      - "18001:9229"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    command: npx nest start --watch

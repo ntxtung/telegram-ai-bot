@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TelegramModule } from './telegram/telegram.module';
-import { UsersModule } from './users/users.module';
+import { TelegramModule } from './telegram';
+import { UsersModule } from './users';
 
 @Module({
-  imports: [TelegramModule.register(), UsersModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TelegramModule, UsersModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
